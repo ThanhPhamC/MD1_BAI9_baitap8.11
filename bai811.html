@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" style="border-collapse: collapse">
+    <tr>
+        <td align="center" colspan="4">BÀI 8.11 Tính thuế thu nhập cá nhân <nhất></nhất></td>
+    </tr>
+    <tr>
+        <td  width="160px"  align="center" >Doanh thu của bạn : </td>
+        <td > <input id="doanhthu" placeholder="Nhập doanh thu(tr) " value="" >   </td>
+        <td align="center" ><button class="hv" onclick="baiso6()">Kết Quả</button></td>
+    </tr>
+    <tr>
+        <td> Doanh thu <= 10tr</td>
+        <td>10tr< Doanh thu <= 20tr </td>
+        <td>Doanh thu >20tr</td>
+    </tr>
+    <tr align="center" >
+        <td><p id="duoi50">Thuế là 10% =...tr</p></td>
+        <td><p id="giua50">Thuế  là 15% =...tr</p></td>
+        <td><p id="tren200">Thuế  là 20% =...tr</p></td>
+    </tr>
+</table>
+<script>
+    function baiso6() {
+        let hoaHong=parseFloat(document.getElementById("doanhthu").value);
+        (hoaHong<=0)? alert("nhập sai doanh số")
+            : (hoaHong>200)? document.getElementById("tren200").innerHTML="Thuế = "+ parseFloat(0.2*hoaHong)+"tr"
+                :(hoaHong>50)?document.getElementById("giua50").innerHTML="Thuế = "+parseFloat(0.15*hoaHong)+"tr"
+                    :document.getElementById("duoi50").innerHTML="Thuế= "+ parseFloat(0.1*hoaHong)+"tr"
+    }
+</script>
+</body>
+</html>
